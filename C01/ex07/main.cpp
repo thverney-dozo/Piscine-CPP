@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/14 12:00:19 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/10/14 12:00:20 by aeoithd          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -24,6 +36,8 @@ int     main(int ac, char **av)
         std::cout << "s1 is empty" << std::endl;
     if (s2.empty())
         std::cout << "s2 " << (s1.empty()?"also ":"") << "is empty" << std::endl;
+    if (s1.empty() || s2.empty())
+        return (1);
     std::ifstream   readFile(filename);
     if (readFile.fail())
     {

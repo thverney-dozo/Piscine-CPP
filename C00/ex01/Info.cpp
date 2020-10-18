@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Info.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/04 08:13:38 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/10/05 11:36:17 by aeoithd          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Info.hpp"
 
 void    Info::fill(int nb_of_contact)
@@ -29,6 +41,7 @@ void    Info::fill(int nb_of_contact)
 
 void    Info::disp_contact()
 {
+    std::string str;
     std::cout << '|';
     std::cout << std::setw(10) << Info::index;
     std::cout << '|';
@@ -36,24 +49,27 @@ void    Info::disp_contact()
         std::cout << std::setw(10) << Info::firstname;
     else
     {
-        firstname.resize(9);
-        std::cout << Info::firstname << ".";
+        str = firstname;
+        str.resize(9);
+        std::cout << str << ".";
     }
     std::cout << '|';
     if (lastname.length() < 11)
         std::cout << std::setw(10)<< Info::lastname;
     else
     {
-        lastname.resize(9);
-        std::cout << Info::lastname << ".";
+        str = lastname;
+        str.resize(9);
+        std::cout << str << ".";
     }
     std::cout << '|';
     if (nickname.length() < 11)
         std::cout << std::setw(10)<< Info::nickname;
     else
     {
-        nickname.resize(9);
-        std::cout << Info::nickname << ".";
+        str = nickname;
+        str.resize(9);
+        std::cout << str << ".";
     }
     std::cout << '|' << std::endl;
 }

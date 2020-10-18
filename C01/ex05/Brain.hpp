@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/14 11:59:25 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/10/14 11:59:26 by aeoithd          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef _BRAIN_H_
 # define _BRAIN_H_
 
@@ -7,13 +19,9 @@
 
 class Brain
 {
-    private:
-            std::string _SelfAware;
-            std::string _Feelings;
-            std::string _Logic;
-            std::string _Senses;
-            std::string _BodyControl;
     public:
+            int _Feelings;
+            int _Logic;
             Brain(void);
             ~Brain(void);
 

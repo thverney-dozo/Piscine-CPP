@@ -1,27 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/04 07:36:25 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/10/04 08:07:14 by aeoithd          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
-#include <stdio.h>
 #include <string>
 #include <locale>
 
-int     main(int ac, char **av)
+int main(int ac, char **av)
 {
     int args;
+    std::string::size_type i;
+    std::locale loc;
 
+    (void)av;
     if (ac == 1)
     {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     }
-    else if (ac > 1)
+    if (ac > 1)
     {
-        args = 1;
+        args= 1;
         while (args < ac)
         {
-            std::locale loc;
-            std::string str= av[args];
-            for (std::string::size_type i=0; i<str.length(); ++i)
-                std::cout << std::toupper(str[i],loc);
+            i = 0;
+            std::string str = av[args];
+            while (i < str.length())
+            {
+                std::cout << std::toupper(str[i], loc);
+                i++;
+            }
             args++;
         }
+            std::cout << std::endl;
     }
-    return (0);
 }
