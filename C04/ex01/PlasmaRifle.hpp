@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/02 21:57:01 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/02 22:28:20 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef PLASMARIFLE_HPP
+# define PLASMARIFLE_HPP
 
-# include <iostream>
+# include "AWeapon.hpp"
 
-class Fixed
+class PlasmaRifle: public AWeapon
 {
-public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
-
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
+    public:
+		PlasmaRifle();
+		PlasmaRifle(const PlasmaRifle &cpy);
+		PlasmaRifle	&operator=(const PlasmaRifle &affect);
+		virtual     ~PlasmaRifle();
+		void        attack(void) const;
 };
 
 #endif

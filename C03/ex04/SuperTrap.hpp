@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/10/26 20:27:02 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/01 17:15:30 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef SuperTrap_Hpp
+#define SuperTrap_Hpp
 
-# include <iostream>
+#include "ClapTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "FragTrap.hpp"
 
-class Fixed
+class SuperTrap : public NinjaTrap, public FragTrap
 {
-public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
-
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
+	public:
+					SuperTrap(std::string name);
+					~SuperTrap(void);
+					SuperTrap(SuperTrap const &other);
+		void		meleeAttack(std::string const &target);
+		void		rangedAttack(std::string const &target);
 };
 
 #endif

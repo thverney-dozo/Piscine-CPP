@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/07 19:28:43 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/12 18:25:45 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-# include <iostream>
+# include "AMateria.hpp"
 
-class Fixed
+class Ice: public AMateria
 {
 public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
-
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
+				Ice();
+				Ice(const Ice &cpy);
+	virtual		~Ice();
+	Ice			&operator=(const Ice &affect);
+	AMateria	*clone() const;
+	void		use(ICharacter &target);
 };
 
 #endif

@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/02 23:02:04 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/03 00:02:53 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef SUPERMUTANT_HPP
+# define SUPERMUTANT_HPP
 
-# include <iostream>
+# include "Enemy.hpp"
 
-class Fixed
+class SuperMutant : public Enemy
 {
-public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
-
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
+	public:
+		SuperMutant();
+		SuperMutant(const SuperMutant &cpy);
+		SuperMutant	    &operator=(const SuperMutant &affect);
+		virtual		    ~SuperMutant();
+		virtual void    takeDamage(int damage);
 };
 
 #endif

@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ISquad.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/03 18:59:47 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/03 19:08:18 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef ISQUAD_HPP
+# define ISQUAD_HPP
 
-# include <iostream>
+# include "ISpaceMarine.hpp"
 
-class Fixed
+class ISquad
 {
-public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
-
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
+	public:
+		virtual                 ~ISquad(void) {};
+		virtual int             getCount(void) const = 0;
+		virtual ISpaceMarine    *getUnit(int) const = 0;
+		virtual int	            push(ISpaceMarine*) = 0;
 };
 
 #endif

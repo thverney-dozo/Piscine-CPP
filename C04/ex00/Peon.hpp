@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/02 19:53:13 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/02 22:06:53 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef PEON_HPP
+# define PEON_HPP
 
 # include <iostream>
+# include "Victim.hpp"
 
-class Fixed
+class Peon: public Victim
 {
-public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
+    private:
+        Peon();
+    public:
+        Peon(std::string name);
+        Peon (const Peon& cpy);
+        Peon &operator=(const Peon& affect);
+        virtual ~Peon();
 
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
+        virtual void getPolymorphed() const;
 };
+
 
 #endif

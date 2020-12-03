@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/10/18 18:25:41 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/01 17:16:04 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef FragTrap_Hpp
+#define FragTrap_Hpp
 
-# include <iostream>
+#include "ClapTrap.hpp"
 
-class Fixed
+class FragTrap : virtual public ClapTrap
 {
-public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
-
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
+	public:
+					FragTrap(std::string name);
+					~FragTrap(void);
+					FragTrap(FragTrap const &other);
+		void		vaulthunter_dot_exe(std::string const &target);
+		void		meleeAttack(std::string const &arget);
+		void		rangedAttack(std::string const &target);
 };
 
 #endif

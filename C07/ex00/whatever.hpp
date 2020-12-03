@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/12/01 10:03:03 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/12/01 10:08:05 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 # include <iostream>
 
-class Fixed
+template<typename T>
+void swap( T& first, T& second)
 {
-public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
+    T tmp;
 
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
-};
+    tmp = first;
+    first = second;
+    second = tmp;
+}
+
+template<typename T>
+T min(T& first, T& second)
+{
+    return (first < second ? first : second);
+}
+
+template<typename T>
+T max(T& first, T& second)
+{
+    return (first > second ? first : second);
+}
 
 #endif

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/18 18:25:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/18 18:25:16 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/01 20:48:52 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/02 22:09:13 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef VICTIM_HPP
+# define VICTIM_HPP
 
 # include <iostream>
+# include <string>
 
-class Fixed
+class Victim
 {
-public:
-    Fixed(void);
-    ~Fixed(void);
-    Fixed(const Fixed &other);
-    Fixed               &operator=(const Fixed &rhs);
-    int                 getRawBits(void) const;
-    void                setRawBits(int const);
+    protected:
+        std::string _name;
+        Victim();
+    public:
+        Victim(std::string name);
+        Victim (const Victim&);
+        virtual ~Victim();
+        Victim &operator=(const Victim &c);
+        const std::string &getName() const;
 
-private:
-    int                 _fixedPoint;
-    static const int    _nbBits;
+        virtual void getPolymorphed() const;
 };
+
+std::ostream &operator<<(std::ostream &out, const Victim &val);
 
 #endif
