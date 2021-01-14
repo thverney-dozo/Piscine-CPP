@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 08:13:56 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/04 08:13:57 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/14 19:52:24 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,24 @@
 class Info
 {
     private:
-    std::string postaladdress;
-    std::string emailaddress;
-    std::string phonenumber;
-    std::string birthdaydate;
-    std::string favoritemeal;
-    std::string underwearcolor;
-    std::string darkestsecret;
+        std::string postaladdress;
+        std::string emailaddress;
+        std::string phonenumber;
+        std::string birthdaydate;
+        std::string favoritemeal;
+        std::string underwearcolor;
+        std::string darkestsecret;
+        std::string login;
+        std::string firstname;
+        std::string lastname;
+        std::string nickname;
 
     public:
-    int         index;
-    std::string login;
-    std::string firstname;
-    std::string lastname;
-    std::string nickname;
-    void        fill(int nb_of_contact);
-    void        disp_contact();
-    void        disp_infos();
-    void        resize();
+        int         index;
+        void        fill(int nb_of_contact);
+        void        disp_contact();
+        void        disp_infos();
+        void        resize();
 }; 
 
 #endif
