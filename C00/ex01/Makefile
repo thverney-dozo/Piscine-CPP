@@ -7,7 +7,7 @@ OBJ			= 	main.o 		\
 				Info.o		\
 
 CXX			= clang++
-CXXFLAGS	= -Wall -Wextra -Werror
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 .PHONY: all clean fclean re
 

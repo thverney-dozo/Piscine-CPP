@@ -13,20 +13,18 @@
 #include "contact.hpp"
 
 #include <stdio.h>
+#include <cstdlib>
+
 
 int     parse_index(std::string search_index, int nb_of_contact)
 {
-    std::string::size_type i;
-    int ret;
-
-    i = -1;
-    while(++i < search_index.length())
-        if (std::isdigit(search_index[i]) != 1)
-            return (-2);
-    ret = std::stoi(search_index);
-    if (ret < 1 || ret > nb_of_contact)
+    if (search_index[1] != '\0')
+	return (-1);
+    int isdi = search_index[0];
+    isdi = isdi - 48;
+    if (isdi < 1 || isdi > nb_of_contact)
         return (-1);
-    return(ret);
+    return(isdi);
 }
 
 int     main()
@@ -75,10 +73,8 @@ int     main()
                 std::cout << std::endl;
                 if ((index = parse_index(search_index, nb_of_contact)) > 0)
                     C.tab[index - 1].disp_infos();
-                else if (index == -2)
-                    std::cout << "Not a number !" << std::endl;
                 else if (index == -1)
-                    std::cout << "No index found" << std::endl;
+                    std::cout << "Invalid index" << std::endl;
             }
         }
         else if (str == "EXIT")

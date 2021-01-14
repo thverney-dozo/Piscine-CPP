@@ -76,6 +76,12 @@ void    Info::disp_contact()
 
 void    Info::disp_infos()
 {
+    std::cout << "First Name        :";
+    std::cout << Info::firstname << std::endl;
+    std::cout << "Last Name         :";
+    std::cout << Info::lastname << std::endl;
+    std::cout << "Nickname          :";
+    std::cout << Info::nickname << std::endl;
     std::cout << "Login             :";
     std::cout << Info::login << std::endl;
     std::cout << "Postal Address    :";
