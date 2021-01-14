@@ -55,6 +55,7 @@ ZombieHorde::ZombieHorde(int n) : _count(n)
 
 ZombieHorde::~ZombieHorde(void)
 {
+	delete []this->Horde;
     std::cout << "Somebody set the horde in fire, they all died"
      << std::endl;
 }
