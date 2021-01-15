@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 12:11:41 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/06 12:11:42 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/15 12:25:36 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,5 @@ void ZombieHorde::announce()
     int i = 0;
 
     while (i < ZombieHorde::_count)
-    {
-	    std::cout << "<" << this->Horde[i]._name << " (" 
-        << this->Horde[i]._type << ")> Braiiiiiiinssss..." << std::endl;
-        i++;
-    }
+	    this->Horde[i++].announce();
 }

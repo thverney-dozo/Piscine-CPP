@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 12:11:45 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/06 12:11:45 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/15 12:21:09 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ class   ZombieHorde
             ~ZombieHorde(void);
 
             void        announce();
+            Zombie *Horde;
 
     private: 
         int _count;
-        Zombie *Horde;
 		static std::string _names[10];
 		static std::string _types[3];
 };

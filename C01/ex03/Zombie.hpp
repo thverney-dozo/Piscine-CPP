@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 12:11:37 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/06 12:11:37 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/15 12:20:50 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class   Zombie
             void	    randomChump(void);
             void        announce(void);
             void        advert();
+    private:
             std::string _name;
             std::string _type;
 };
