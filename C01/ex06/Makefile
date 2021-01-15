@@ -1,8 +1,14 @@
-NAME		= replace
+NAME		= bin
 
-SRC			= 	main.cpp
+SRC			= 	main.cpp	\
+				Weapon.cpp	\
+				HumanA.cpp	\
+				HumanB.cpp
 
-OBJ			= 	main.o
+OBJ			= 	main.o		\
+				Weapon.o	\
+				HumanA.o	\
+				HumanB.o	\
 
 CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
