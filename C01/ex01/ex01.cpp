@@ -21,3 +21,9 @@ void memoryLeak()
     std::cout << *panthere << std::endl;
     delete panthere;
 }
+
+int	main()
+{
+	memoryLeak();
+	return (0);
+}
