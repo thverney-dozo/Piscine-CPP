@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 12:11:31 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/05 12:11:34 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/15 12:14:27 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@
 
 class Pony
 {
-    public:
+    private:
         int _head;
         int _tail;
         int _body;
         int _legs;
+    public:
         Pony();
         ~Pony();
         void    run();
