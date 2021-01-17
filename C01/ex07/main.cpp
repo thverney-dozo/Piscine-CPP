@@ -49,6 +49,8 @@ int     main(int ac, char **av)
         std::cout << "Error creating file" << std::endl;
         return (1);
     }
+    if (s1 == " ")
+	return (0);
     while (std::getline(input, buffer))
     {
         while (buffer.find(s1) != std::string::npos)
@@ -56,7 +58,6 @@ int     main(int ac, char **av)
             buffer.replace(buffer.find(s1), s1.length(), s2);
         }
         output << buffer;
-        output << std::endl;
     }
     if (buffer == "")
         output << std::endl;
