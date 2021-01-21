@@ -3,65 +3,78 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 12:00:19 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/14 12:00:20 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/21 13:25:27 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
 #include <fstream>
 
-
-int     main(int ac, char **av)
+void	read_file(std::ifstream *input, std::string name, std::string s1, std::string s2)
 {
-    std::string         buffer;
+	char			c;
+	unsigned long	i;
+	std::string		s;
+	std::string		save;
+	std::ofstream	output(name + ".replace", std::ios::out | std::ios::trunc);
 
-    if (ac != 4)
-    {
+	std::cout << "test\n";
+	while (input->get(c))
+	{
+		i = 0;
+		if (c == s1[i])
+		{
+			while (c == s1[i])
+			{
+				save += c;
+				input->get(c);
+                i++;
+			}
+			if (i == s1.length())
+				s += s2;
+			else
+				s += save;
+			save = "";
+		}
+			s += c;
+	}
+	std::cout << "Output : " << s;
+	output << s;
+	input->close();
+	output.close();
+}
+
+int     usage(int err)
+{
+    if (err == 1)
         std::cout << "Usage ->(./replace filename s1 s2)" << std::endl;
-        return(0);
-    }
-    std::string filename = av[1];
-    std::string s1 = av[2];
-    std::string s2 = av[3];
-    std::string output_str = filename + ".replace";
-    if (s1.empty())
-        std::cout << "s1 is empty" << std::endl;
-    if (s2.empty())
-        std::cout << "s2 " << (s1.empty()?"also ":"") << "is empty" << std::endl;
-    if (s1.empty() || s2.empty())
-        return (1);
-    std::fstream input;
-    std::fstream output;
-    input.open(filename.c_str(), std::fstream::in);
-    if (!input)
-    {
-        std::cout << "Error opening file" << std::endl;
-        return(1);
-    }
-    output.open(output_str.c_str(), std::fstream::out);
-    if (!output)
-    {
-	input.close();
-        std::cout << "Error creating file" << std::endl;
-        return (1);
-    }
-    if (s1 == " ")
+    if (err == 2)
+       std::cout << "Neither s1 and s2 can't be empty" << std::endl;    
+    if (err == 3)
+		std::cout << "File open fail\n";
+    return (1);
+}
+
+int main(int ac, char **av)
+{
+	std::string		name;
+	std::string		s1;
+	std::string		s2;
+
+	if (ac != 4)
+		return (usage(1));
+	if (av[2][0] == '\0' || av[3][0] == '\0')
+		return (usage(2));
+	name = av[1];
+	s1 = av[2];
+	s2 = av[3];
+	std::ifstream	input(name, std::ios::in);
+	if (input)
+		read_file(&input, name, s1, s2);
+	else
+		return (usage(3));
 	return (0);
-    while (std::getline(input, buffer))
-    {
-        while (buffer.find(s1) != std::string::npos)
-        {
-            buffer.replace(buffer.find(s1), s1.length(), s2);
-        }
-        output << buffer;
-    }
-    if (buffer == "")
-        output << std::endl;
-    input.close();
-    output.close();
-    return (0);
 }
