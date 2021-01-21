@@ -74,7 +74,7 @@ int main(int ac, char **av)
 	s2 = av[3];
 	std::ifstream	input;
 
-    input.open(name);
+    input.open(name.c_str());
 	if (input)
 		read_file(&input, name, s1, s2);
 	else
