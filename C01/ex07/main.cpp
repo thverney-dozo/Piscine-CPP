@@ -6,7 +6,7 @@
 /*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 12:00:19 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/21 13:25:27 by thverney         ###   ########.fr       */
+/*   Updated: 2021/01/21 13:56:06 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	read_file(std::ifstream *input, std::string name, std::string s1, std::stri
 	unsigned long	i;
 	std::string		s;
 	std::string		save;
-	std::ofstream	output(name + ".replace", std::ios::out | std::ios::trunc);
+	std::ofstream	output;
 
-	std::cout << "test\n";
+    name = name + ".replace";
+    output.open(name.c_str());
 	while (input->get(c))
 	{
 		i = 0;
@@ -71,7 +72,9 @@ int main(int ac, char **av)
 	name = av[1];
 	s1 = av[2];
 	s2 = av[3];
-	std::ifstream	input(name, std::ios::in);
+	std::ifstream	input;
+
+    input.open(name);
 	if (input)
 		read_file(&input, name, s1, s2);
 	else
