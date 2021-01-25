@@ -20,16 +20,17 @@
 
 class ScavTrap: public ClapTrap
 {
+	private:
+		std::string _challenge;
 
-public:
-    ScavTrap(std::string name = "Unknown");
-    ScavTrap(ScavTrap const &copy);
-    ScavTrap &operator=(ScavTrap const &scav);
-    ~ScavTrap();
-    // Attack methods
-    std::string     getChallenge(void);
-    void            challengeNewcomer(const std::string &target);
-    std::string     _challenge;
+	public:
+    		ScavTrap(std::string name = "Unknown");
+    		ScavTrap(ScavTrap const &copy);
+    		ScavTrap &operator=(ScavTrap const &scav);
+    		~ScavTrap();
+    		// Attack methods
+    		std::string     getChallenge();
+    		void            challengeNewcomer(const std::string &target);
 };
 
 
