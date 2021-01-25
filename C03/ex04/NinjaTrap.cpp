@@ -75,12 +75,7 @@ void		NinjaTrap::ninjaShoebox(NinjaTrap &target)
 	std::cout << this->name << " used his special ninja ability on ninjatrap" << target.getName() << " !" <<std::endl;
 }
 
-void		NinjaTrap::rangedAttack(std::string const &target)
-{
-	std::cout << this->name << " attacked " << target << " with a shuriken, causing " << this->rangedAttackDamage << " damages." << std::endl;
-}
-
-void		NinjaTrap::meleeAttack(std::string const &target)
+void		NinjaTrap::meleeAttack(std::string const &target) const
 {
 	std::cout << this->name << " attacked " << target << " with an katana, causing " << this->meleeAttackDamage << " damages." << std::endl;
 }

@@ -34,8 +34,8 @@ class ClapTrap
         ClapTrap(ClapTrap const &copy);
         ClapTrap &operator=(ClapTrap const &clap);
 		virtual			~ClapTrap(void);
-		virtual	void	rangedAttack(std::string const &target);
-		virtual void	meleeAttack(std::string const &target);
+		virtual	void	rangedAttack(std::string const &target) const;
+		virtual void	meleeAttack(std::string const &target) const;
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 		std::string		getName(void) const;

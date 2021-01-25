@@ -71,12 +71,12 @@ void		ClapTrap::beRepaired(unsigned int amount)
 	this->hitPoints = (this->hitPoints > this->maxHit ? this->maxHit : this->hitPoints);
 }
 
-void		ClapTrap::rangedAttack(std::string const &target)
+void		ClapTrap::rangedAttack(std::string const &target) const
 {
 	std::cout << this->name << " uses a ranged attack against" << target << "." << std::endl;
 }
 
-void		ClapTrap::meleeAttack(std::string const &target)
+void		ClapTrap::meleeAttack(std::string const &target) const
 {
 	std::cout << this->name << " uses a melee attack against" << target << "." << std::endl;
 }

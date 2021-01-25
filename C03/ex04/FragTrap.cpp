@@ -81,3 +81,10 @@ void		FragTrap::vaulthunter_dot_exe(std::string const &target)
     }
 	std::cout << this->name << " attacked " << target << " with " << tool << std::endl;
 }
+
+void		FragTrap::rangedAttack(const std::string &target) const
+{
+	std::cout << this->name << " attacked " << target
+	       	<< " with a sniper, causing " << this->rangedAttackDamage 
+		<< " damages." << std::endl;
+}
