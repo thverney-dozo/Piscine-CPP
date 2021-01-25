@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 18:25:38 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/30 13:07:23 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:29:41 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,35 @@ FragTrap::FragTrap(std::string name):
     _classyAttackDamagePoints = 99;
 }
 
+FragTrap::FragTrap(FragTrap const &copy)
+{
+	*this = copy;
+	std::cout << "Copy constructor" << std::endl;
+	return;
+}
+
+FragTrap & FragTrap::operator=(FragTrap const &frag)
+{
+    if (this != &frag)
+    {
+        this->_hitPoints = frag._hitPoints;
+        this->_maxHitPoints = frag._maxHitPoints;
+        this->_energyPoints = frag._energyPoints;
+        this->_maxEnergyPoints = frag._maxEnergyPoints;
+        this->_level = frag._level;
+        this->_name = frag._name;
+        this->_meleeAttackDamage = frag._meleeAttackDamage;
+        this->_rangedAttackDamage = frag._rangedAttackDamage;
+        this->_armorAttackReduction = frag._armorAttackReduction;
+    }
+    std::cout << "Assignation" << std::endl;
+    return (*this);
+}
+
 FragTrap::~FragTrap()
 {
     std::cout << "FR4G-TP : I... my music... X_X" << std::endl;
 
-}
-
-void FragTrap::meleeAttack(std::string const &target)
-{
-    std::cout << "FR4G-TP " << _name << " attacks " << target
-    << " with melee, causing " << _meleeAttackDamage
-    << " damage" << std::endl;
-    return ;
-}
-
-void FragTrap::rangedAttack(std::string const &target)
-{
-    std::cout << "FR4G-TP " << _name << " attacks " << target
-    << " at range, causing " << _rangedAttackDamage
-    << " damage" << std::endl;
-    return ;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 18:25:38 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/26 18:18:20 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:02:21 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,35 @@ FragTrap::FragTrap(std::string name)
     this->_classyAttackDamagePoints = 99;
 }
 
-FragTrap::~FragTrap() {}
+FragTrap::FragTrap(FragTrap const &copy)
+{
+	*this = copy;
+	std::cout << "Copy constructor" << std::endl;
+	return;
+}
+
+FragTrap & FragTrap::operator=(FragTrap const &frag)
+{
+    if (this != &frag)
+    {
+        this->_hitPoints = frag._hitPoints;
+        this->_maxHitPoints = frag._maxHitPoints;
+        this->_energyPoints = frag._energyPoints;
+        this->_maxEnergyPoints = frag._maxEnergyPoints;
+        this->_level = frag._level;
+        this->_name = frag._name;
+        this->_meleeAttackDamagePoints = frag._meleeAttackDamagePoints;
+        this->_rangedAttackDamagePoints = frag._rangedAttackDamagePoints;
+        this->_armourDamageReductionPoints = frag._armourDamageReductionPoints;
+    }
+    std::cout << "Assignation" << std::endl;
+    return (*this);
+}
+
+FragTrap::~FragTrap()
+{
+    std::cout << "FR4G-TP : I... my music... X_X" << std::endl;
+}
 
 void FragTrap::meleeAttack(std::string const &target)
 {
@@ -76,18 +104,9 @@ void FragTrap::takeDamage(unsigned int amount)
 
 void FragTrap::beRepaired(unsigned int amount)
 {
-    if (this->_energyPoints < amount)
-    {
-        std::cout << this->_name << ": I don't have enough energy... :(" << std::endl;
-    }
-    else
-    {
-        this->_energyPoints -= amount;
-        this->_hitPoints = amount + this->_hitPoints;
-        std::cout << this->_name << ": My music is healing myself... ;)" << std::endl;
-        std::cout << "HP points: " << this->_hitPoints << std::endl;
-    }
-    std::cout << "Energy points left: " << this->_energyPoints << std::endl;
+    this->_hitPoints = amount + _hitPoints > _maxHitPoints ? _maxHitPoints : _hitPoints + amount; 
+    std::cout << this->_name << ": My music is healing myself... ;)" << std::endl;
+    std::cout << "HP points: " << this->_hitPoints << std::endl;
     return ;
 }
 

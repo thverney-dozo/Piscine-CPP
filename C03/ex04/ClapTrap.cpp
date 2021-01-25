@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 18:32:26 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/01 17:16:24 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:33:08 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,31 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "CL4P-TP " << name << " came to life." << std::endl;
 	this->name = name;
 }
-
-ClapTrap::ClapTrap(ClapTrap const &other)
+ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	std::cout << "CL4P-TP " << name << " came to life." << std::endl;
-	*this = other;
+	*this = copy;
+	std::cout << "Copy constructor" << std::endl;
+	return;
 }
 
-ClapTrap::~ClapTrap(void)
+ClapTrap & ClapTrap::operator=(ClapTrap const &clap)
+{
+    if (this != &clap)
+    {
+        this->hitPoints = clap.hitPoints;
+        this->maxHit = clap.maxHit;
+        this->energyPoints = clap.energyPoints;
+        this->maxEnergyPoints = clap.maxEnergyPoints;
+        this->level = clap.level;
+        this->name = clap.name;
+        this->meleeAttackDamage = clap.meleeAttackDamage;
+        this->rangedAttackDamage = clap.rangedAttackDamage;
+        this->armorDamageReduction = clap.armorDamageReduction;
+    }
+    std::cout << "Assignation" << std::endl;
+    return (*this);
+}
+ClapTrap::~ClapTrap()
 {
 	std::cout << "CL4P-TP " << this->name << " killed." << std::endl;
 }

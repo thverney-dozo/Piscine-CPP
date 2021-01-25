@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 18:25:41 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/26 18:19:15 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 12:45:32 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ private:
     unsigned int  _classyAttackDamagePoints;
 
 public:
-    FragTrap(std::string name);
+    FragTrap(std::string name = "Unknown");
+    FragTrap(FragTrap const &copy);
+    FragTrap &operator=(FragTrap const &frag);
     ~FragTrap();
     void          takeDamage(unsigned int amount);
     void          beRepaired(unsigned int amount);

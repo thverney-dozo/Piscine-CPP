@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:12:21 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/26 18:19:22 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:08:32 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ private:
     unsigned int    _meleeAttackDamagePoints;
     unsigned int    _rangedAttackDamagePoints;
     unsigned int    _armourDamageReductionPoints;
+    std::string     _challenge;
 
 public:
     ScavTrap(std::string name);
@@ -44,7 +45,6 @@ public:
     unsigned int    getArmourDamageReduction(void);
     std::string     getChallenge(void);
     void            challengeNewcomer(const std::string &target);
-    std::string     _challenge;
 };
 
 

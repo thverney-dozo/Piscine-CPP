@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:12:17 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/26 19:11:35 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:30:22 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,34 @@ ScavTrap::ScavTrap(std::string name):
     _armorAttackReduction = 5;
 }
 
+ScavTrap::ScavTrap(ScavTrap const &copy)
+{
+	*this = copy;
+	std::cout << "Copy constructor" << std::endl;
+	return;
+}
+
+ScavTrap & ScavTrap::operator=(ScavTrap const &scav)
+{
+    if (this != &scav)
+    {
+        this->_hitPoints = scav._hitPoints;
+        this->_maxHitPoints = scav._maxHitPoints;
+        this->_energyPoints = scav._energyPoints;
+        this->_maxEnergyPoints = scav._maxEnergyPoints;
+        this->_level = scav._level;
+        this->_name = scav._name;
+        this->_meleeAttackDamage = scav._meleeAttackDamage;
+        this->_rangedAttackDamage = scav._rangedAttackDamage;
+        this->_armorAttackReduction = scav._armorAttackReduction;
+    }
+    std::cout << "Assignation" << std::endl;
+    return (*this);
+}
+
 ScavTrap::~ScavTrap()
 {
     std::cout << "SC4V-TP : I... my music... X_X" << std::endl;
-}
-
-void ScavTrap::meleeAttack(std::string const &target)
-{
-    std::cout << "SC4V-TP " << _name << " attacks " << target
-    << " with melee, causing " << _meleeAttackDamage
-    << " damage" << std::endl;
-    return ;
-}
-
-void ScavTrap::rangedAttack(std::string const &target)
-{
-    std::cout << "SC4V-TP " << _name << " attacks " << target
-    << " at range, causing " << _rangedAttackDamage
-    << " damage" << std::endl;
-    return ;
 }
 
 static const std::string CHALLENGES[] = {

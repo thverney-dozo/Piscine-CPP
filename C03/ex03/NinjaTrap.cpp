@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 18:14:19 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/26 19:58:33 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:13:46 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,31 @@ NinjaTrap::NinjaTrap(std::string name):
     ClapTrap(name, 100, 100, 100, 100, 1, 30, 20, 5)
 {
     std::cout << "I'm a NINJ4-TP" << name << ", my music is better !" << std::endl;
+}
+
+NinjaTrap::NinjaTrap(NinjaTrap const &copy)
+{
+	*this = copy;
+	std::cout << "Copy constructor" << std::endl;
+	return;
+}
+
+NinjaTrap & NinjaTrap::operator=(NinjaTrap const &ninja)
+{
+    if (this != &ninja)
+    {
+        this->_hitPoints = ninja._hitPoints;
+        this->_maxHitPoints = ninja._maxHitPoints;
+        this->_energyPoints = ninja._energyPoints;
+        this->_maxEnergyPoints = ninja._maxEnergyPoints;
+        this->_level = ninja._level;
+        this->_name = ninja._name;
+        this->_meleeAttackDamage = ninja._meleeAttackDamage;
+        this->_rangedAttackDamage = ninja._rangedAttackDamage;
+        this->_armorAttackReduction = ninja._armorAttackReduction;
+    }
+    std::cout << "Assignation" << std::endl;
+    return (*this);
 }
 
 NinjaTrap::~NinjaTrap()

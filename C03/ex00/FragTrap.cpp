@@ -6,7 +6,7 @@
 /*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 18:25:38 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/25 11:55:57 by thverney         ###   ########.fr       */
+/*   Updated: 2021/01/25 13:25:59 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,6 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
   }
   return ;
 }
-
 
 void FragTrap::pianoAttack(std::string const &target)
 {

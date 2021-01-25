@@ -1,10 +1,14 @@
 NAME		= bin
 
 SRC			= 	main.cpp \
+				ClapTrap.cpp \
 				FragTrap.cpp \
+				ScavTrap.cpp \
 
 OBJ			= 	main.o \
-				FragTrap.o
+				ClapTrap.o \
+				FragTrap.o \
+				ScavTrap.o \
 
 CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98

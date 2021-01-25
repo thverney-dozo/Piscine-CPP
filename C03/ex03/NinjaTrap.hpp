@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 18:14:23 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/26 19:46:48 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:11:53 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 class NinjaTrap: public ClapTrap
 {
     public:
-        NinjaTrap(std::string name);
+        NinjaTrap(std::string name = "Unknown");
+        NinjaTrap(NinjaTrap const &copy);
+        NinjaTrap &operator=(NinjaTrap const &ninja);
         ~NinjaTrap();
         // Attack methods
         void          meleeAttack(std::string const &target);

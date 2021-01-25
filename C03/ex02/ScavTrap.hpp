@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:12:21 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/26 19:07:37 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:07:41 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ class ScavTrap: public ClapTrap
 {
 
 public:
-    ScavTrap(std::string name);
+    ScavTrap(std::string name = "Unknown");
+    ScavTrap(ScavTrap const &copy);
+    ScavTrap &operator=(ScavTrap const &scav);
     ~ScavTrap();
     // Attack methods
     void            meleeAttack(std::string const &target);

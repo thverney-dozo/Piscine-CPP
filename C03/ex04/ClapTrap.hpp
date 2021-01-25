@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 18:32:06 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/01 17:16:16 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:32:15 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,16 @@ class ClapTrap
 		int				maxHit;
 		int				energyPoints;
 		int				maxEnergyPoints;
-		float			level;
+		int				level;
 		std::string		name;
 		int				meleeAttackDamage;
 		int				rangedAttackDamage;
 		int				armorDamageReduction;
+
 	public:
-						ClapTrap(std::string name);
-						ClapTrap(ClapTrap const &other);
+		ClapTrap(std::string name = "Unknown");
+        ClapTrap(ClapTrap const &copy);
+        ClapTrap &operator=(ClapTrap const &clap);
 		virtual			~ClapTrap(void);
 		virtual	void	rangedAttack(std::string const &target);
 		virtual void	meleeAttack(std::string const &target);

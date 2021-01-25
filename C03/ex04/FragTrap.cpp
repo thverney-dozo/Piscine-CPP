@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 18:25:38 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/01 18:06:33 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:34:56 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,36 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->meleeAttackDamage = 30;
 	this->rangedAttackDamage = 20;
 	this->armorDamageReduction = 5;
-	this->level = 1.0;
+	this->level = 1;
 	std::cout << "FR4G-TP " << this->name << ": I'm a fragger !" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &other) : ClapTrap(other)
+FragTrap::FragTrap(FragTrap const &copy)
 {
-	std::cout << "FR4G-TP " << this->name << ": I'm a fragger !" << std::endl;
+	*this = copy;
+	std::cout << "Copy constructor" << std::endl;
+	return;
 }
 
-FragTrap::~FragTrap(void)
+FragTrap & FragTrap::operator=(FragTrap const &frag)
+{
+    if (this != &frag)
+    {
+        this->hitPoints = frag.hitPoints;
+        this->maxHit = frag.maxHit;
+        this->energyPoints = frag.energyPoints;
+        this->maxEnergyPoints = frag.maxEnergyPoints;
+        this->level = frag.level;
+        this->name = frag.name;
+        this->meleeAttackDamage = frag.meleeAttackDamage;
+        this->rangedAttackDamage = frag.rangedAttackDamage;
+        this->armorDamageReduction = frag.armorDamageReduction;
+    }
+    std::cout << "Assignation" << std::endl;
+    return (*this);
+}
+
+FragTrap::~FragTrap()
 {
 	std::cout << "FR4G-TP " << this->name << ": Oh no, I died :(" << std::endl;
 }
@@ -60,14 +80,4 @@ void		FragTrap::vaulthunter_dot_exe(std::string const &target)
 			tool = "swag";
     }
 	std::cout << this->name << " attacked " << target << " with " << tool << std::endl;
-}
-
-void		FragTrap::rangedAttack(std::string const &target)
-{
-	std::cout << this->name << " attacked " << target << " with a ranged attack, causing " << this->rangedAttackDamage << " damages." << std::endl;
-}
-
-void		FragTrap::meleeAttack(std::string const &target)
-{
-	std::cout << this->name << " attacked " << target << " with an melee, causing " << this->meleeAttackDamage << " damages." << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 18:14:19 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/01 18:06:10 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:37:37 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,33 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 	this->meleeAttackDamage = 60;
 	this->rangedAttackDamage = 5;
 	this->armorDamageReduction = 0;
-	this->level = 1.0;
+	this->level = 1;
 	std::cout << "N1NJ4-TP " << this->name << " I'm a ninja !" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const &other) : ClapTrap(other)
+NinjaTrap::NinjaTrap(NinjaTrap const &copy)
 {
-	std::cout << "N1NJ4-TP " << this->name << " I'm a ninja !" << std::endl;
+	*this = copy;
+	std::cout << "Copy constructor" << std::endl;
+	return;
+}
+
+NinjaTrap & NinjaTrap::operator=(NinjaTrap const &ninja)
+{
+    if (this != &ninja)
+    {
+        this->hitPoints = ninja.hitPoints;
+        this->maxHit = ninja.maxHit;
+        this->energyPoints = ninja.energyPoints;
+        this->maxEnergyPoints = ninja.maxEnergyPoints;
+        this->level = ninja.level;
+        this->name = ninja.name;
+        this->meleeAttackDamage = ninja.meleeAttackDamage;
+        this->rangedAttackDamage = ninja.rangedAttackDamage;
+        this->armorDamageReduction = ninja.armorDamageReduction;
+    }
+    std::cout << "Assignation" << std::endl;
+    return (*this);
 }
 
 NinjaTrap::~NinjaTrap()

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:12:17 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/01 17:15:46 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:36:34 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,33 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->meleeAttackDamage = 20;
 	this->rangedAttackDamage = 15;
 	this->armorDamageReduction = 3;
-	this->level = 1.0;
+	this->level = 1;
 	std::cout << "5C4V-TP " << this->name << ": I'm a nasty scavenger." << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &other) : ClapTrap(other)
+ScavTrap::ScavTrap(ScavTrap const &copy)
 {
-	(void)other;
-	std::cout << "5C4V-TP " << this->name << ": I'm a nasty scavenger." << std::endl;
+	*this = copy;
+	std::cout << "Copy constructor" << std::endl;
+	return;
+}
+
+ScavTrap & ScavTrap::operator=(ScavTrap const &scav)
+{
+    if (this != &scav)
+    {
+        this->hitPoints = scav.hitPoints;
+        this->maxHit = scav.maxHit;
+        this->energyPoints = scav.energyPoints;
+        this->maxEnergyPoints = scav.maxEnergyPoints;
+        this->level = scav.level;
+        this->name = scav.name;
+        this->meleeAttackDamage = scav.meleeAttackDamage;
+        this->rangedAttackDamage = scav.rangedAttackDamage;
+        this->armorDamageReduction = scav.armorDamageReduction;
+    }
+    std::cout << "Assignation" << std::endl;
+    return (*this);
 }
 
 ScavTrap::~ScavTrap(void)
@@ -52,15 +71,4 @@ void		ScavTrap::challengeNewcomer(void)
     std::cout << challenge << " " 
 	<<  " If you don't answer, you humiliate yourself" << std::endl;
     return ;
-}
-
-
-void		ScavTrap::rangedAttack(std::string const &target)
-{
-	std::cout << this->name << " attacked " << target << " with a bow, causing " << this->rangedAttackDamage << " damages." << std::endl;
-}
-
-void		ScavTrap::meleeAttack(std::string const &target)
-{
-	std::cout << this->name << " attacked " << target << " with an axe, causing " << this->meleeAttackDamage << " damages." << std::endl;
 }

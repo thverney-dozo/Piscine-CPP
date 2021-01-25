@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thverney <thverney@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:12:21 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/10/26 19:07:37 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 13:30:47 by thverney         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@
 
 class ScavTrap: public ClapTrap
 {
+    protected:
+        std::string     _challenge;
+    public:
+        ScavTrap(std::string name = "Unknown");
+        ScavTrap(ScavTrap const &copy);
+        ScavTrap &operator=(ScavTrap const &scav);
+        ~ScavTrap();
 
-public:
-    ScavTrap(std::string name);
-    ~ScavTrap();
-    // Attack methods
-    void            meleeAttack(std::string const &target);
-    void            rangedAttack(std::string const &target);
-
-    std::string     getChallenge(void);
-    void            challengeNewcomer(const std::string &target);
-    std::string     _challenge;
+        std::string     getChallenge(void);
+        void            challengeNewcomer(const std::string &target);
 };
 
 
