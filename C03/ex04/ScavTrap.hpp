@@ -13,7 +13,8 @@
 #ifndef ScavTrap_Hpp
 #define ScavTrap_Hpp
 
-#include "ClapTrap.hpp"
+# include <cstdlib>
+# include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {

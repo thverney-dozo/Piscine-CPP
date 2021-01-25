@@ -13,7 +13,8 @@
 #ifndef FragTrap_Hpp
 #define FragTrap_Hpp
 
-#include "ClapTrap.hpp"
+# include <cstdlib>
+# include "ClapTrap.hpp"
 
 class FragTrap : virtual public ClapTrap
 {

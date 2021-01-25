@@ -123,7 +123,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
   else
   {
         this->_energyPoints -= 25;
-        srand(time(NULL));
+	srand(time(NULL));
         random = rand() % 5;
         if (random == 0)
             FragTrap::pianoAttack(target);
