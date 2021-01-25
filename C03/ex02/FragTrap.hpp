@@ -35,8 +35,6 @@ class FragTrap: public ClapTrap
         FragTrap &operator=(FragTrap const &frag);
         ~FragTrap();
         // Attack methods
-        void          meleeAttack(std::string const &target);
-        void          rangedAttack(std::string const &target);
         void          vaulthunter_dot_exe(std::string const &target);
         void          pianoAttack(std::string const &target);
         void          glassAttack(std::string const &target);

@@ -27,9 +27,6 @@ public:
     ScavTrap &operator=(ScavTrap const &scav);
     ~ScavTrap();
     // Attack methods
-    void            meleeAttack(std::string const &target);
-    void            rangedAttack(std::string const &target);
-
     std::string     getChallenge(void);
     void            challengeNewcomer(const std::string &target);
     std::string     _challenge;

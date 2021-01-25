@@ -57,22 +57,6 @@ ScavTrap::~ScavTrap()
     std::cout << "SC4V-TP : I... my music... X_X" << std::endl;
 }
 
-void ScavTrap::meleeAttack(std::string const &target)
-{
-    std::cout << "SC4V-TP " << _name << " attacks " << target
-    << " with melee, causing " << _meleeAttackDamage
-    << " damage" << std::endl;
-    return ;
-}
-
-void ScavTrap::rangedAttack(std::string const &target)
-{
-    std::cout << "SC4V-TP " << _name << " attacks " << target
-    << " at range, causing " << _rangedAttackDamage
-    << " damage" << std::endl;
-    return ;
-}
-
 static const std::string CHALLENGES[] = {
     "Can you get a higher note than Matt Bellamy?",
     "Who said 'il a pas dit bonjour...'",

@@ -54,22 +54,6 @@ FragTrap::~FragTrap()
     std::cout << "FR4G-TP : I... my music... X_X" << std::endl;
 }
 
-void FragTrap::meleeAttack(std::string const &target)
-{
-    std::cout << "FR4G-TP " << _name << " attacks " << target
-    << " with melee, causing " << _meleeAttackDamage
-    << " damage" << std::endl;
-    return ;
-}
-
-void FragTrap::rangedAttack(std::string const &target)
-{
-    std::cout << "FR4G-TP " << _name << " attacks " << target
-    << " at range, causing " << _rangedAttackDamage
-    << " damage" << std::endl;
-    return ;
-}
-
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
   int   random;
