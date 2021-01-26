@@ -6,14 +6,11 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 00:07:27 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/03 18:42:34 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 01:38:47 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-
-Character::Character()
-{}
 
 Character::Character(std::string const &name): _name(name)
 {
@@ -92,7 +89,7 @@ void Character::attack(Enemy *enemy)
 
 std::ostream &operator<<(std::ostream &out, Character const &val)
 {
-    out << "I am " << val.getName() << " has "  << val.getAP() << " AP";
+    out << val.getName() << " has "  << val.getAP() << " AP";
     if (val.getWeapon() == NULL)
         out << " and is unarmed" << std::endl;
     else

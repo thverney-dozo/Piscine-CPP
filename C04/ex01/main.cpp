@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 18:56:00 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/03 18:56:01 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 01:53:40 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
 #include "SuperMutant.hpp"
+#include "ElectroRifle.hpp"
+#include "MagmaSpider.hpp"
 
 int main()
 {
@@ -74,6 +76,21 @@ int main()
         std::cout << "Super Mutant attacks snoop! ...and hit really hard" << std::endl;
         std::cout << "Our hero died against the Super Mutant :(" << std::endl;
         delete snoop;
+
+        Character* jay= new Character("Jay");
+        Enemy* spid = new MagmaSpider();
+        AWeapon* er = new ElectroRifle();
+
+        jay->equip(er);
+        std::cout << "Spider has " << spid->getHP() << " HP " << std::endl;
+        jay->attack(spid);
+        std::cout << *jay;
+        std::cout << "Spider has " << spid->getHP() << " HP " << std::endl;
+        jay->attack(spid);
+        std::cout << *jay;
+        std::cout << "Spider has " << spid->getHP() << " HP " << std::endl;
+    
+        delete jay;
         return (0);
     }
 }

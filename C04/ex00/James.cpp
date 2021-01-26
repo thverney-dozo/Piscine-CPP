@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   James.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 19:53:13 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/25 23:24:25 by aeoithd          ###   ########.fr       */
+/*   Created: 2021/01/25 23:34:07 by aeoithd           #+#    #+#             */
+/*   Updated: 2021/01/25 23:49:53 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#include "James.hpp"
 
-# include <iostream>
-# include "Victim.hpp"
-
-class Peon: public Victim
+James::James(std::string name): Victim(name)
 {
-    private:
-        Peon();
-
-    public:
-        Peon(std::string name);
-        Peon (const Peon& cpy);
-        Peon &operator=(const Peon& affect);
-        virtual ~Peon();
-
-        virtual void getPolymorphed() const;
-};
+    std::cout << "James james." << std::endl;
+} 
 
 
-#endif
+James::James(const James& cpy) : Victim(cpy)
+{}
+
+James::~James()
+{
+	std::cout << "Nooooooooo...\n";
+}
+
+James &James::operator=(const James &affect)
+{
+	_name = affect._name;
+    return *this;
+}
+
+void James::getPolymorphed() const
+{
+	std::cout << _name << " has been turned into a green Jammy!\n";
+}

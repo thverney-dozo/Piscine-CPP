@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   James.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 19:53:13 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/25 23:24:25 by aeoithd          ###   ########.fr       */
+/*   Created: 2021/01/25 23:31:15 by aeoithd           #+#    #+#             */
+/*   Updated: 2021/01/25 23:45:30 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef JAMES_HPP
+#define JAMES_HPP
 
-# include <iostream>
-# include "Victim.hpp"
+#include <iostream>
+#include <string>
 
-class Peon: public Victim
+#include "Victim.hpp"
+
+class James : public Victim
 {
-    private:
-        Peon();
-
+	private:
+        James();
     public:
-        Peon(std::string name);
-        Peon (const Peon& cpy);
-        Peon &operator=(const Peon& affect);
-        virtual ~Peon();
+        James(std::string name);
+        James (const James& cpy);
+        James &operator=(const James& affect);
+        virtual ~James();
 
         virtual void getPolymorphed() const;
 };
-
-
 #endif

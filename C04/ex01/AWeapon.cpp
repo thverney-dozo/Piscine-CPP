@@ -6,14 +6,11 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:29:42 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/02 23:00:01 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 01:23:19 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
-
-AWeapon::AWeapon()
-{}
 
 AWeapon::AWeapon(std::string const &name, int apcost, int damage):
     _name(name), _apcost(apcost), _damage(damage)

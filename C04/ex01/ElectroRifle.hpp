@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   ElectroRifle.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 19:53:13 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/25 23:24:25 by aeoithd          ###   ########.fr       */
+/*   Created: 2021/01/26 01:41:19 by aeoithd           #+#    #+#             */
+/*   Updated: 2021/01/26 01:41:45 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef ELECTRORIFLE_HPP
+# define ELECTRORIFLE_HPP
 
-# include <iostream>
-# include "Victim.hpp"
+# include "AWeapon.hpp"
 
-class Peon: public Victim
+class ElectroRifle: public AWeapon
 {
-    private:
-        Peon();
-
     public:
-        Peon(std::string name);
-        Peon (const Peon& cpy);
-        Peon &operator=(const Peon& affect);
-        virtual ~Peon();
-
-        virtual void getPolymorphed() const;
+		ElectroRifle();
+		ElectroRifle(const ElectroRifle &cpy);
+		ElectroRifle	&operator=(const ElectroRifle &affect);
+		virtual     ~ElectroRifle();
+		void        attack(void) const;
 };
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 22:29:09 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/03 18:13:18 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 01:29:29 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int     Enemy::getHP() const
 
 void Enemy::takeDamage(int damage)
 {
-    if (damage < 0)
+    if (damage <= 0)
         return ;
     _hp = _hp - damage;
     if (_hp < 0)

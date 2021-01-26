@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 17:25:40 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/02 22:07:07 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 01:09:46 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include "Victim.hpp"
 # include "Peon.hpp"
+# include "James.hpp"
 
 class Sorcerer
 {
@@ -24,6 +25,7 @@ class Sorcerer
         std::string _name;
         std::string _title;
         Sorcerer();
+
     public:
         Sorcerer(std::string name, std::string title);
         Sorcerer (const Sorcerer&);

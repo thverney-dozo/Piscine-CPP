@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 19:53:13 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/25 23:24:25 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/07 19:20:37 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/12 18:25:41 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include <iostream>
-# include "Victim.hpp"
+# include "AMateria.hpp"
 
-class Peon: public Victim
+class Cure: public AMateria
 {
-    private:
-        Peon();
-
-    public:
-        Peon(std::string name);
-        Peon (const Peon& cpy);
-        Peon &operator=(const Peon& affect);
-        virtual ~Peon();
-
-        virtual void getPolymorphed() const;
+public:
+				Cure();
+				Cure(const Cure &cpy);
+	virtual		~Cure();
+	Cure		&operator=(const Cure &affect);
+	AMateria	*clone() const;
+	void		use(ICharacter &target);
 };
-
 
 #endif

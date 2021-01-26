@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 19:53:13 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/25 23:24:25 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/04 21:05:36 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/12 18:25:47 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-# include <iostream>
-# include "Victim.hpp"
+# include <string>
+class ICharacter;
+# include "AMateria.hpp"
 
-class Peon: public Victim
+class ICharacter
 {
-    private:
-        Peon();
-
-    public:
-        Peon(std::string name);
-        Peon (const Peon& cpy);
-        Peon &operator=(const Peon& affect);
-        virtual ~Peon();
-
-        virtual void getPolymorphed() const;
+public:
+	virtual						~ICharacter() {}
+	virtual std::string const	&getName() const = 0;
+	virtual void				equip(AMateria *m) = 0;
+	virtual void				unequip(int idx) = 0;
+	virtual void				use(int idx, ICharacter &target) = 0;
 };
-
 
 #endif

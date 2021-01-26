@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 00:07:26 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/03 18:00:00 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 01:33:59 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Character
         std::string _name;
         int         _ap;
         AWeapon     *_weapon;
+        Character();
 
     protected:
         void        setName(std::string name);
         void        setAP(int ap);
-        Character();
 
     public:
         Character(std::string const &name);

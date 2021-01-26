@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 18:55:55 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/04 18:30:11 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 02:07:13 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ Squad::Squad()
     _index = 0;
 }
 
-Squad::Squad(const Squad &cpy)
+Squad::Squad(const Squad& cpy) : _index(cpy._index)
 {
-    *this = cpy;
+	_units = new ISpaceMarine* [cpy._index];
+	for (int i = 0; i < cpy._index; i++)
+		_units[i] = cpy._units[i]->clone();
 }
 
 Squad::~Squad()

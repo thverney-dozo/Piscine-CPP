@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 19:29:43 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/02 21:14:01 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 01:17:25 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ int main()
         Sorcerer robert("Robert", "the Magnificent");
         Victim jim("Jimmy");
         Peon joe("Joe");
-        std::cout << robert << jim << joe;
+        James greg("greg");
+        std::cout << robert << jim << joe << greg;
         robert.polymorph(jim);
         robert.polymorph(joe);
+        robert.polymorph(greg);
     }
     for(int i=0; i<4; i++){std::cout << std::endl;}
     {
@@ -30,10 +32,13 @@ int main()
         Victim tmp = jack;
         Peon peter("Peter");
         Peon peterCopy = peter;
+        James al("Al");
+        James alCopy = al;
         Victim jackCopy(jack);
         steve.polymorph(jack);
         steve.polymorph(peter);
         steve.polymorph(peterCopy);
+        steve.polymorph(al);
         std::cout << jack << std::endl;
     }
 }

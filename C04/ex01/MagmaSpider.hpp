@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   MagmaSpider.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 19:53:13 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/25 23:24:25 by aeoithd          ###   ########.fr       */
+/*   Created: 2021/01/26 01:47:04 by aeoithd           #+#    #+#             */
+/*   Updated: 2021/01/26 01:47:53 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef MAGMASPIDER_HPP
+# define MAGMASPIDER_HPP
 
-# include <iostream>
-# include "Victim.hpp"
+# include "Enemy.hpp"
 
-class Peon: public Victim
+class MagmaSpider : public Enemy
 {
-    private:
-        Peon();
-
-    public:
-        Peon(std::string name);
-        Peon (const Peon& cpy);
-        Peon &operator=(const Peon& affect);
-        virtual ~Peon();
-
-        virtual void getPolymorphed() const;
+	public:
+		MagmaSpider();
+		MagmaSpider(const MagmaSpider &cpy);
+		MagmaSpider	    &operator=(const MagmaSpider &affect);
+		virtual		    ~MagmaSpider();
 };
-
 
 #endif

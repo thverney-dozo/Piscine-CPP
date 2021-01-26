@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 19:53:13 by aeoithd           #+#    #+#             */
-/*   Updated: 2021/01/25 23:24:25 by aeoithd          ###   ########.fr       */
+/*   Created: 2020/11/07 19:28:43 by aeoithd           #+#    #+#             */
+/*   Updated: 2020/11/12 18:25:45 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-# include <iostream>
-# include "Victim.hpp"
+# include "AMateria.hpp"
 
-class Peon: public Victim
+class Ice: public AMateria
 {
-    private:
-        Peon();
-
-    public:
-        Peon(std::string name);
-        Peon (const Peon& cpy);
-        Peon &operator=(const Peon& affect);
-        virtual ~Peon();
-
-        virtual void getPolymorphed() const;
+public:
+				Ice();
+				Ice(const Ice &cpy);
+	virtual		~Ice();
+	Ice			&operator=(const Ice &affect);
+	AMateria	*clone() const;
+	void		use(ICharacter &target);
 };
-
 
 #endif

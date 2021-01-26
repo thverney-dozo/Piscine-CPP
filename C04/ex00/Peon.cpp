@@ -6,16 +6,11 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 19:53:15 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/02 21:06:47 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/25 23:25:11 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
-
-Peon::Peon(): Victim("Vic")
-{
-    std::cout << "Zog zog." << std::endl;
-}
 
 Peon::Peon(std::string name): Victim(name)
 {
@@ -29,9 +24,7 @@ Peon::Peon(const Peon &cpy): Victim(cpy)
 
 Peon &Peon::operator=(const Peon &affect)
 {
-    std::cout << "Bleuark..." << std::endl;
     _name = affect._name;
-    std::cout << "Zog zog." << std::endl;
     return *this;
 }
 
@@ -42,5 +35,5 @@ Peon::~Peon()
 
 void Peon::getPolymorphed() const
 {
-    std::cout << _name << " has been turned into a pink pony!" << std::endl;
+    std::cout << _name << " was just polymorphed into a pink pony!" << std::endl;
 }
