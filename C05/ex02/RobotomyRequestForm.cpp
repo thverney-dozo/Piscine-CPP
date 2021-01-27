@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 20:03:36 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/18 05:24:55 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:41:00 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void    RobotomyRequestForm::execute(const Bureaucrat &bureaucrat) const
 {
     Form::execute(bureaucrat);
     std::cout << "DRRRRRRRRRrrrrrrr" << std::endl;
+    srand(time(NULL));
     if (rand() % 2)
         std::cout << getTarget() << " has been robotomized successfully!"
             << std::endl;

@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 20:50:08 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/18 05:24:53 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:43:01 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PresidentialPardonForm: public Form
         PresidentialPardonForm(std::string target);
         PresidentialPardonForm(const PresidentialPardonForm &cpy);
         PresidentialPardonForm   &operator=(const PresidentialPardonForm &affect);
-        ~PresidentialPardonForm();
+        virtual ~PresidentialPardonForm();
 
         class FileFailureException: public std::exception
         {
@@ -40,7 +40,7 @@ class PresidentialPardonForm: public Form
         
         std::string getTarget(void) const;
 
-		void                    execute(const Bureaucrat &bureaucrat) const;
+		virtual void                    execute(const Bureaucrat &bureaucrat) const;
 };
 
 #endif

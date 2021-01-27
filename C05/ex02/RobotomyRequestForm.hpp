@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 20:02:39 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/18 05:24:58 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:42:11 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include "Bureaucrat.hpp"
 # include <stdexcept>
 # include "Form.hpp"
@@ -28,7 +29,7 @@ class RobotomyRequestForm: public Form
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm(const RobotomyRequestForm &cpy);
         RobotomyRequestForm   &operator=(const RobotomyRequestForm &affect);
-        ~RobotomyRequestForm();
+        virtual ~RobotomyRequestForm();
 
         class FileFailureException: public std::exception
         {
@@ -39,7 +40,7 @@ class RobotomyRequestForm: public Form
         
         std::string getTarget(void) const;
 
-		void                    execute(const Bureaucrat &bureaucrat) const;
+		virtual void                    execute(const Bureaucrat &bureaucrat) const;
 };
 
 #endif

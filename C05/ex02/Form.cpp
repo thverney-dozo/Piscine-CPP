@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:14:58 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/18 05:24:43 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:19:01 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,12 @@ void        Form::beSigned(Bureaucrat &bureaucrat)
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-    return "grade too high!";
+    return "grade is too high!";
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-    return "grade too low!";
+    return "grade is too low!";
 }
 
 const char *Form::UnsignedException::what() const throw()

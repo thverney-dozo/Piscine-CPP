@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:15:00 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/18 05:24:47 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:39:23 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ class Form
         Form(std::string name, int gradeToSign, int gradeToExecute);
         Form(const Form &cpy);
         Form                &operator=(const Form &affect);
-        ~Form();
+        virtual     ~Form();
         int           getGradeToSign()const ;
         int           getGradeToExecute()const ;
         std::string   getName()const ;
         void                beSigned(Bureaucrat &bureaucrat);
+        virtual void			execute(const Bureaucrat &executor) const = 0;
         class GradeTooHighException: public std::exception
         {
             public:
@@ -54,8 +55,6 @@ class Form
                 UnsignedException();
                 virtual const char* what() const throw();
         };
-
-        virtual void			execute(const Bureaucrat &executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, const Form &c);

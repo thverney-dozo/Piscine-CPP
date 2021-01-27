@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:15:00 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/12 23:30:19 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:04:54 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Form
         int           getGradeToSign()const ;
         int           getGradeToExecute()const ;
         std::string   getName()const ;
+        bool          getIsSigned() const;
         void                beSigned(Bureaucrat &bureaucrat);
         class GradeTooHighException: public std::exception
         {

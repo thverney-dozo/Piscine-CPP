@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:14:13 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/18 05:56:29 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:44:22 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Bureaucrat
         void                decrementGrade();
         void                incrementGrade();
         void                signForm(Form &form);
-		void				executeForm(Form &form);
+		void                executeForm(Form const &form) const;
 
         class               GradeTooHighException: public std::exception
         {

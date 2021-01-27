@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 17:08:03 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/18 05:25:03 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:42:28 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ShrubberyCreationForm: public Form
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(const ShrubberyCreationForm &cpy);
         ShrubberyCreationForm   &operator=(const ShrubberyCreationForm &affect);
-        ~ShrubberyCreationForm();
+        virtual ~ShrubberyCreationForm();
 
         class FileFailureException: public std::exception
         {
@@ -41,7 +41,7 @@ class ShrubberyCreationForm: public Form
         
         std::string getTarget(void) const;
 
-		void                    execute(const Bureaucrat &bureaucrat) const;
+		virutal void                    execute(const Bureaucrat &bureaucrat) const;
 };
 
 #endif

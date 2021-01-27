@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:13:37 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/13 00:21:42 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:12:09 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void Bureaucrat::signForm(Form &form)
     catch (std::exception &e)
     {
         std::cout << _name << " cannot sign " << form.getName()
-            << " because " << e.what() << std::endl;
+            << " because his " << e.what() << std::endl;
     }
 }
 
@@ -89,10 +89,10 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "grade too high";
+	return "grade is too high";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "grade too low";
+	return "grade is too low";
 }

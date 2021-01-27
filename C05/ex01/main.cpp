@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:14:17 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/16 16:58:23 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:15:51 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,15 +103,7 @@ int     main()
     std::cout << "Jim is trying to sign a 20 grade Contrat (Jim 's current grade is 30)" << std::endl << "{" << std::endl;
     std::cout << "      ";
     std::cout << contrat << std::endl;
-	try
-	{
-        std::cout << "      ";
-		contrat.beSigned(jim);
-
-	}
-	catch(std::exception)
-	{
-		std::cout << jim.getName() << " can't sign " << contrat.getName() << " because his grade is too low." << std::endl;
-	}
+    std::cout << "      ";
+	jim.signForm(contrat);
     std::cout << "}" << std::endl << std::endl;
 }

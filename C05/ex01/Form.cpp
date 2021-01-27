@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:14:58 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/12 23:26:12 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:19:12 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,6 @@ Form &Form::operator=(const Form &affect)
     return *this;
 }
 
-std::ostream	&operator<<(std::ostream &out, const Form &rhs)
-{
-	out << rhs.getName() << " minimum signing grade is : " << rhs.getGradeToSign()
-    << ", and minimum executing grade is : " << rhs.getGradeToExecute() << ".";
-	return (out);
-}
 
 int   Form::getGradeToSign() const
 {
@@ -64,6 +58,11 @@ std::string   Form::getName() const
     return _name;
 }
 
+bool Form::getIsSigned() const
+{
+	return (_isSigned);
+}
+
 void        Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > getGradeToSign())
@@ -74,10 +73,22 @@ void        Form::beSigned(Bureaucrat &bureaucrat)
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-    return "grade too high!";
+    return "grade is too high!";
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-    return "grade too low!";
+    return "grade is too low!";
+}
+
+std::ostream	&operator<<(std::ostream &out, const Form &rhs)
+{
+	out << rhs.getName() << " minimum signing grade is : " << rhs.getGradeToSign()
+    << ", and minimum executing grade is : " << rhs.getGradeToExecute() 
+    << ". The Form ";
+    if (rhs.getIsSigned())
+		std::cout << "is signed." << std::endl;
+	else
+		std::cout << "isn't signed\n" << std::endl;
+	return (out);
 }

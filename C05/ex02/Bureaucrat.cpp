@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:13:37 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/18 05:24:34 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:44:43 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void Bureaucrat::signForm(Form &form)
     }
 }
 
-void Bureaucrat::executeForm(Form &form)
+void Bureaucrat::executeForm(const Form &form) const
 {
 	try
 	{
@@ -82,7 +82,7 @@ void Bureaucrat::executeForm(Form &form)
 	}
 	catch(std::exception &e)
 	{
-		std::cout << _name << " can't execute " << form.getName() << " because" << e.what() << "." << std::endl;
+		std::cout << _name << " can't execute " << form.getName() << " because " << e.what() << "." << std::endl;
 	}
 }
 

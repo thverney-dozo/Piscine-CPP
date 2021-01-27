@@ -6,7 +6,7 @@
 /*   By: aeoithd <aeoithd@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:13:37 by aeoithd           #+#    #+#             */
-/*   Updated: 2020/11/12 22:27:16 by aeoithd          ###   ########.fr       */
+/*   Updated: 2021/01/26 20:11:30 by aeoithd          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "grade too high";
+	return "grade is too high";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "grade too low";
+	return "grade is too low";
 }
