@@ -29,7 +29,7 @@ int     main()
     M_John_CEO.signForm(*form);
     M_John_CEO.executeForm(*form);
     delete form;
-    form = JakeTheIntern.makeForm("pre", "M_John_CEO");
+    form = JakeTheIntern.makeForm("president", "M_John_CEO");
     form = JakeTheIntern.makeForm("presidential pardon", "M_John_CEO");
     M_John_CEO.signForm(*form);
 	M_John_CEO.executeForm(*form);

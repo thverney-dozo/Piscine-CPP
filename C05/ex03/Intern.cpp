@@ -45,5 +45,5 @@ Form *Intern::makeForm(std::string formName, std::string target)
 		}
 	}
 	std::cout << "No form with name " << formName << "." << std::endl;
-	return (nullptr);
+	return (NULL);
 }

@@ -65,7 +65,7 @@ void    ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
     std::string     filename = getTarget() + "_shrubbery";
     std::ofstream   file;
     
-    file.open(filename, std::ios::out);
+    file.open(filename.c_str());
     if(file.bad())
         throw FileFailureException();
     Form::execute(bureaucrat);

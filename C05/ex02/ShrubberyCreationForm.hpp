@@ -41,7 +41,7 @@ class ShrubberyCreationForm: public Form
         
         std::string getTarget(void) const;
 
-		virutal void                    execute(const Bureaucrat &bureaucrat) const;
+		virtual void                    execute(const Bureaucrat &bureaucrat) const;
 };
 
 #endif

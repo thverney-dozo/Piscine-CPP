@@ -45,9 +45,13 @@ const char* RobotomyRequestForm::FileFailureException::what() const throw()
 
 void    RobotomyRequestForm::execute(const Bureaucrat &bureaucrat) const
 {
+    int random;
+
+    srand(time(NULL));
+    random = rand();
     Form::execute(bureaucrat);
     std::cout << "DRRRRRRRRRrrrrrrr" << std::endl;
-    if (rand() % 2)
+    if (random % 2)
         std::cout << getTarget() << " has been robotomized successfully!"
             << std::endl;
     else

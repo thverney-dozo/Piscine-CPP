@@ -18,6 +18,7 @@
 # include <stdexcept>
 # include "Form.hpp"
 # include <fstream>
+# include <cstdlib>
 
 class RobotomyRequestForm: public Form
 {
