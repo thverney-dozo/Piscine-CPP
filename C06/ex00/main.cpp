@@ -37,7 +37,7 @@ void    ft_convert(char *arg)
 	{
 		try
 		{
-			db = std::stod(str);
+			db = atof(str.c_str());
 		}
 		catch (std::exception &e)
 		{
