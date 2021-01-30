@@ -12,7 +12,6 @@
 
 #include <string>
 #include <iostream>
-#include "Awesome.hpp"
 #include "iter.hpp"
 
 void disp_int(int const &t)
