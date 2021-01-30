@@ -1,5 +1,5 @@
 NAME=iter
-FLAGS=-Werror -Wall -Wextra
+FLAGS=-Werror -Wall -Wextra -std=c++98
 
 all: $(NAME)
 
