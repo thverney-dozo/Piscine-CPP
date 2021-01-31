@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
+#include <list>
 
 int main()
 {
@@ -34,5 +35,35 @@ int main()
         ++it;
     }
     std::stack<int> s(mstack);
+    std::cout << std::endl;
+    std::cout << s.top() << std::endl;
+    
+    MutantStack<int> mstack2(mstack);
+    
+    mstack.push(2);
+    mstack.push(8);
+    mstack.push(12);
+
+    it = mstack2.begin();
+    ite = mstack2.end();
+
+    while (it != ite)
+    {
+      std::cout << *it << std::endl;
+      ++it;
+    }
+
+    MutantStack<int> mstack3;
+
+    mstack3 = mstack2;
+
+    it = mstack3.begin();
+    ite = mstack3.end();
+
+    while (it != ite)
+    {
+      std::cout << *it << std::endl;
+      ++it;
+    }
     return 0;
 }

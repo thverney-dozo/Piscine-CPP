@@ -26,8 +26,9 @@ class MutantStack: public std::stack<T>
 		virtual ~MutantStack(){};
 
 		MutantStack &operator=(MutantStack const &affect) 
-        {
-			return (std::stack<T>::operator=(affect));
+        	{
+			this->c = affect.c;
+			return (*this);
 		};
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
