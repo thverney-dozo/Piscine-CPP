@@ -25,6 +25,9 @@ char const *Span::SpanNoNumException::what() const throw()
 Span::Span() : _Nmax(2147483647)
 {}
 
+Span::~Span()
+{}
+
 Span::Span(unsigned n) : _Nmax(n)
 {}
 
@@ -39,11 +42,23 @@ Span &Span::operator=(const Span &affect)
 	return *this;
 }
 
-void	Span::addNumber(int n)
+void		Span::addNumber(int nb)
 {
-	if (this->_list.size() >= max)
-		throw SpanFullException();
-	this->_list.push_back(n);
+	if (_list.size() >= _Nmax)
+		throw std::exception();
+	_list.push_back(nb);
+}
+
+void		Span::addNumber(unsigned int start, unsigned int end, int value)
+{
+	if (end >= _Nmax)
+		throw std::exception();
+	if (start >= end)
+		throw std::exception();
+	if (end > _list.size())
+		_list.resize(end);
+	std::vector<int>::iterator	it = _list.begin() + start;
+	std::fill(it, it + (end - start), value);
 }
 
 int	Span::longestSpan()

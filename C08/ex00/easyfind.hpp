@@ -14,18 +14,19 @@
 # define EASYFIND_HPP
 
 # include <vector>
-# include <deque>
 # include <iostream>
 # include <exception>
+# include <algorithm>
+# include <deque>
 
-template<typename T> int easyfind(T f, int n)
+template<typename T> int easyfind(T &f, int n)
 {
-    typename T::iterator where;
-
-    where = std::find(f.begin(), f.end(), n);
-    if (where == f.end())
+    typename T::iterator it;
+    
+    it = std::find(f.begin(), f.end(), n);
+    if (it == f.end())
 	    throw std::exception();
-	return (*where);
+	return (*it);
 }
 
 #endif

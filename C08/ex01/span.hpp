@@ -33,18 +33,18 @@ class Span
 		Span(unsigned int n);
 		Span	&operator=(const Span &affect);
 		virtual	~Span();
+		class SpanFullException: public std::exception
+		{
+			public:
+				char const *what() const throw();
+		};
 		class SpanNoNumException: public std::exception
 		{
 			public:
 				char const *what() const throw();
-		}
-		class SpanNoNumException: public std::exception
-		{
-			public:
-				char const *what() const throw();
-		}
+		};
+		void	addNumber(unsigned int start, unsigned int end, int value);
 		void	addNumber(int n);
-		void	addRange(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		int		shortestSpan(void);
 		int		longestSpan(void);
 };

@@ -28,13 +28,13 @@ int main()
         {std::cout << easyfind(tab, 3) << " is in tab" << std::endl;}
 
 	catch (std::exception &e)
-	    {std::cout << "Cannot find 3 in tab" << std::endl;}
+	    {std::cout << "Error: Cannot find 3 in tab" << std::endl;}
 	
     try
         {std::cout << easyfind(tab, 10) << std::endl;}
 	
     catch (std::exception &e)
-	    {std::cout << "Cannot find 10 in tab" << std::endl;}
+	    {std::cout << "Error: Cannot find 10 in tab" << std::endl;}
     
     std::deque<int> tab2(1,2);
     
